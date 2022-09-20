@@ -1,23 +1,79 @@
+body {
+  display: grid; 
+  place-items: center; 
+  height: 100vh;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: 100px  100px;
+    grid-template-rows: 100px  100px; 
+    
+  }
+
+  .circle {
+    display: grid;
+    place-items: center;
+    background: 	#303030;
+    border-radius: 50%;
+    height: 400px;
+    width: 400px;
+    
+   
+  }
+  
+
+
+
+
 #yellow {
     width: 100px;
     height: 100px; 
     background-color: yellow;
+    
+    box-shadow: 2px 6px 2px black;
 }
 
+#yellow:active{
+  transform: translateY(4px);
+  box-shadow: 0px 2px 1px black;
+ }
+
 #blue {
-    width: 100px;
+     width: 100px;
     height: 100px; 
-    background-color: blue;
+    background-color: blue; 
+    box-shadow: 2px 6px 2px black;
 }
+
+
+ #blue:active{
+  transform: translateY(4px);
+  box-shadow: 0px 2px 1px black;
+ }
 
 #green {
     width: 100px;
     height: 100px; 
     background-color: green;
+    box-shadow: 2px 6px 2px black;
 }
+
+#green:active{
+  transform: translateY(4px);
+  box-shadow: 0px 2px 1px black;
+ }
 
 #red {
     width: 100px;
     height: 100px; 
     background-color: red;
+    box-shadow: 2px 6px 2px black;
 }
+
+#red:active{
+  transform: translateY(4px);
+  box-shadow: 0px 2px 1px black;
+ }
+
+
