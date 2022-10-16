@@ -6,11 +6,11 @@ body {
 
 .button-container {
     display: grid;
-    grid-template-columns: 100px  100px;
-    grid-template-rows: 100px  100px; 
-    
+    grid-template-columns: 150px  150px;
+    grid-template-rows: 150px  150px; 
+    gap: 10px;
   }
-
+  
   .circle {
     display: grid;
     place-items: center;
@@ -18,20 +18,29 @@ body {
     border-radius: 50%;
     height: 400px;
     width: 400px;
-    
-   
   }
   
+  .inner-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: 	#303030;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    z-index: 1;
+  }
 
 
 
 
 #yellow {
-    width: 100px;
-    height: 100px; 
+    width: 150px;
+    height: 150px; 
     background-color: yellow;
-    
     box-shadow: 2px 6px 2px black;
+    border-radius: 100% 0 0 0;
 }
 
 #yellow:active{
@@ -39,11 +48,16 @@ body {
   box-shadow: 0px 2px 1px black;
  }
 
+ #yellow.glow {
+  background-color: rgb(249, 249, 188);
+ }
+
 #blue {
-     width: 100px;
-    height: 100px; 
+     width: 150px;
+    height: 150px; 
     background-color: blue; 
     box-shadow: 2px 6px 2px black;
+    border-radius: 0 100% 0 0;
 }
 
 
@@ -52,11 +66,16 @@ body {
   box-shadow: 0px 2px 1px black;
  }
 
+ #blue.glow {
+  background-color: lightblue;
+ }
+
 #green {
-    width: 100px;
-    height: 100px; 
+    width: 150px;
+    height: 150px; 
     background-color: green;
     box-shadow: 2px 6px 2px black;
+    border-radius: 0 0 0 100%;
 }
 
 #green:active{
@@ -64,11 +83,16 @@ body {
   box-shadow: 0px 2px 1px black;
  }
 
+ #green.glow {
+  background-color: lightgray;
+ }
+
 #red {
-    width: 100px;
-    height: 100px; 
+    width: 150px;
+    height: 150px; 
     background-color: red;
     box-shadow: 2px 6px 2px black;
+    border-radius: 0 0 100% 0;
 }
 
 #red:active{
@@ -76,4 +100,6 @@ body {
   box-shadow: 0px 2px 1px black;
  }
 
-
+ #red.glow {
+  background-color: lightcoral;
+ }
