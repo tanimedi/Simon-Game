@@ -1,38 +1,72 @@
 var gameOrder = [];
 var playerOrder;
 var nextColor;
+var nextColorNumber;
 var color;
+var colors = ['yellow', 'blue', 'green', 'red'];
+var newOrder;
 var sequencePosition = 0;
+var yellowBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+var blueBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
+var greenBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+var redBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 
-let colors = {
-    "yellow":1,
-    "blue":2,
-    "green":3,
-    "red":4
-}
+
 
 function lightUp(color) {
     const colorChoice = document.getElementById(color);
     colorChoice.classList.add('glow');
     setTimeout(function(){
         colorChoice.classList.remove('glow');
-    }, 200);
+    }, 500);
+    redBeep.play();
+}
+
+function lightUpGame(gameColors) {
+    gameOrder.forEach(function(currentColor, i){
+       
+       setTimeout(function(){
+        lightUp(currentColor);
+        
+       }, i * 1500);
+    });
+    
+}
+
+function playAudio () {
+    yellowBeep.play();
+    blueBeep.play();
+    greenBeep.play();
+    redBeep.play();
 }
 
 
+ 
+function playAudioTimeout () {
+    yellowBeep.play();
+    setTimeout(function(){
+        blueBeep.play();
+    }, 1500);
+    setTimeout(function(){
+        greenBeep.play();
+    }, 3000);
+    setTimeout(function(){
+        redBeep.play();
+    }, 4500);
+    
+}
+//playAudioTimeout()
 
 function randomColor(){
     
-    nextColor = Math.floor(Math.random()*4)+1;
-
+    nextColorNumber = Math.floor(Math.random()*4);
+    nextColor = colors[nextColorNumber];
     gameOrder.push(nextColor);
-    // // for ( i=0; i < gameOrder.length; i++) {
-    // //     if (gameOrder[i] === colors[key]) {
-    // //         color = Object.keys(colors)[0];
-    // //         const color = document.getElementById(color);
-    // //         color.classList.add('glow');
-    // // }
-    // console.log(gameOrder + " game order");
+    //redBeep.play();
+    lightUpGame()
+    
+    console.log("game order= " + gameOrder );
+    
     // }
 }
 
@@ -40,26 +74,22 @@ randomColor()
 
 
 
-function playerChoice(e) {
-    let playerOrder;
+function playerChoice(chosenColor) {
+    
 
-    for (var key of Object.keys(colors)) {
-  
-        if (key === e){
-             playerOrder = colors[key];
-             console.log(playerOrder + " player order");
-        }
-    }
+   
 
     //console.log(playerOrder);
-    console.log(gameOrder.length + " gameOrder length");
-    console.log(gameOrder + " gameOrder");
-    console.log(sequencePosition + " sequence Position");
+    //console.log(gameOrder.length + " gameOrder length");
+    //console.log(gameOrder + " gameOrder");
+    //console.log(sequencePosition + " sequence Position");
 
-    if (playerOrder === gameOrder[sequencePosition]) {
+    if (chosenColor === gameOrder[sequencePosition]) {
         if (sequencePosition === gameOrder.length-1){
-        randomColor();
-        i=0;
+            setTimeout(function(){
+                randomColor();
+                sequencePosition = 0;
+               }, 700);
         }
 
          else  {
