@@ -2,7 +2,18 @@ body {
   display: grid; 
   place-items: center; 
   height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1631106254201-ffbee2305c5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
 }
+
+#game-message {
+background-color: black;
+font-size: 50px;
+color: white;
+font-weight: bold;
+padding: 10px;
+}
+
 
 .button-container {
     display: grid;
@@ -22,9 +33,9 @@ body {
   
   .inner-circle {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 200;
+    left: 200;
+    /* transform: translate(-50%, -50%); */
     background: 	#303030;
     border-radius: 50%;
     height: 150px;

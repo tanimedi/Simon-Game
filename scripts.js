@@ -10,16 +10,21 @@ var yellowBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp
 var blueBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
 var greenBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
 var redBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+const message = document.getElementById('game-message');
+var score = 0;
+var highestScore =0;
 
 
 
 function lightUp(color) {
     const colorChoice = document.getElementById(color);
+    const beep = document.getElementById(color+'Beep')
+
     colorChoice.classList.add('glow');
     setTimeout(function(){
         colorChoice.classList.remove('glow');
     }, 500);
-    redBeep.play();
+    beep.play();
 }
 
 function lightUpGame(gameColors) {
@@ -65,6 +70,7 @@ function randomColor(){
     //redBeep.play();
     lightUpGame()
     
+    
     console.log("game order= " + gameOrder );
     
     // }
@@ -86,6 +92,14 @@ function playerChoice(chosenColor) {
 
     if (chosenColor === gameOrder[sequencePosition]) {
         if (sequencePosition === gameOrder.length-1){
+            score = score + 1;
+            if (score > highestScore) {
+                highestScore = score;
+                sessionStorage.setItem("highestScore", highestScore);
+            }
+            console.log('score ' + score);
+            console.log('higestScore ' + highestScore);
+                
             setTimeout(function(){
                 randomColor();
                 sequencePosition = 0;
@@ -97,8 +111,11 @@ function playerChoice(chosenColor) {
         }
 
     }
-    else console.log('game over')
-    
+    else {
+    //console.log('game over')
+   
+    message.textContent = 'Game Over';
+    }
 }
 
 

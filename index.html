@@ -11,9 +11,11 @@
 </head>
 <body>
 
-  <div class="inner-circle"></div>
+<p id="game-message"></p>
+
+  
     <div class="circle">
-        
+        <div class="inner-circle"></div>
     <div class="button-container">
     <div class="button" id="yellow" onclick="playerChoice(this.id); lightUp(this.id)"></div>
     <div class="button" id="blue" onclick="playerChoice(this.id); lightUp(this.id)"></div>
@@ -21,6 +23,11 @@
     <div class="button" id="red" onclick="playerChoice(this.id); lightUp(this.id)"></div>
     </div>
     </div>
+
+    <audio id='yellowBeep' src='https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'></audio>
+    <audio id='blueBeep' src='https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'></audio>
+    <audio id='greenBeep' src='https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'></audio>
+    <audio id='redBeep' src='https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'></audio>
 
   
 
