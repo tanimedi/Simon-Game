@@ -10,7 +10,8 @@ var yellowBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp
 var blueBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
 var greenBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
 var redBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
-const message = document.getElementById('game-message');
+const gameMessage = document.getElementById('game-message');
+const scoreDisplay = document.getElementById('high-score');
 var score = 0;
 var highestScore =0;
 
@@ -95,10 +96,10 @@ function playerChoice(chosenColor) {
             score = score + 1;
             if (score > highestScore) {
                 highestScore = score;
-                sessionStorage.setItem("highestScore", highestScore);
+                sessionStorage.setItem('highestScore', highestScore);
             }
             console.log('score ' + score);
-            console.log('higestScore ' + highestScore);
+            console.log('highestScore ' + highestScore);
                 
             setTimeout(function(){
                 randomColor();
