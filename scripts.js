@@ -70,7 +70,7 @@ function randomColor(){
     gameOrder.push(nextColor);
     //redBeep.play();
     lightUpGame()
-    scoreDisplay.textContent = 'highScore';
+    scoreDisplay.textContent = sessionStorage.getItem('highScore');
     
     console.log("game order= " + gameOrder );
     
