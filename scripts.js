@@ -70,7 +70,7 @@ function randomColor(){
     gameOrder.push(nextColor);
     //redBeep.play();
     lightUpGame()
-    scoreDisplay.textContent = sessionStorage.getItem('highScore');
+    scoreDisplay.textContent = localStorage.getItem('highScore');
     
     console.log("game order= " + gameOrder );
     
@@ -96,7 +96,7 @@ function playerChoice(chosenColor) {
             score = score + 1;
             if (score > highestScore) {
                 highestScore = score;
-                sessionStorage.setItem('highScore', highestScore);
+                localStorage.setItem('highScore', highestScore);
                 
             }
             console.log('score ' + score);
