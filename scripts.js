@@ -116,7 +116,7 @@ function playerChoice(chosenColor) {
     else {
     //console.log('game over')
    
-    message.textContent = 'Game Over';
+    gameMessage.textContent = 'Game Over';
     }
 }
 

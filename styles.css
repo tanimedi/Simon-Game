@@ -6,12 +6,20 @@ body {
   background-size: cover;
 }
 
+#score {
+  position:absolute;
+  background-color: white;
+  font-weight: bold;
+  top:10%;
+}
+
 #game-message {
-background-color: black;
+position:absolute;
 font-size: 50px;
-color: white;
+color: black;
 font-weight: bold;
 padding: 10px;
+top:20%;
 }
 
 
@@ -23,12 +31,14 @@ padding: 10px;
   }
   
   .circle {
+    position:absolute;
     display: grid;
     place-items: center;
     background: 	#303030;
     border-radius: 50%;
     height: 400px;
     width: 400px;
+    top:30%;
   }
   
   .inner-circle {
