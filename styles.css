@@ -6,6 +6,19 @@ body {
   background-size: cover;
 }
 
+
+#play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  }
+  img {
+    width: 60px;
+  }
+
+
 #score {
   position:absolute;
   background-color: rgb(209, 207, 207);
@@ -23,7 +36,6 @@ font-weight: bold;
 padding: 10px;
 top:20%;
 }
-
 
 .button-container {
     display: grid;
