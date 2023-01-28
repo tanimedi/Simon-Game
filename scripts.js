@@ -77,7 +77,7 @@ function randomColor(){
     // }
 }
 
-randomColor()
+
 
 
 
