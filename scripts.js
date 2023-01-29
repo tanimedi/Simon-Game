@@ -39,30 +39,6 @@ function lightUpGame(gameColors) {
     
 }
 
-function playAudio () {
-    yellowBeep.play();
-    blueBeep.play();
-    greenBeep.play();
-    redBeep.play();
-}
-
-
- 
-function playAudioTimeout () {
-    yellowBeep.play();
-    setTimeout(function(){
-        blueBeep.play();
-    }, 1500);
-    setTimeout(function(){
-        greenBeep.play();
-    }, 3000);
-    setTimeout(function(){
-        redBeep.play();
-    }, 4500);
-    
-}
-//playAudioTimeout()
-
 function randomColor(){
     
     nextColorNumber = Math.floor(Math.random()*4);
