@@ -53,6 +53,11 @@ function randomColor(){
     // }
 }
 
+function playButton() {
+    gameOrder = [];
+    randomColor();
+}
+
 
 
 
