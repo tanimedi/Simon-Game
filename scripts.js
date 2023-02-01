@@ -28,6 +28,16 @@ function lightUp(color) {
     beep.play();
 }
 
+function lightsOnly(color){
+    const colorChoice = document.getElementById(color);
+   
+
+    colorChoice.classList.add('glow');
+    setTimeout(function(){
+        colorChoice.classList.remove('glow');
+    }, 500);
+}
+
 function lightUpGame(gameColors) {
     gameOrder.forEach(function(currentColor, i){
        
@@ -96,7 +106,9 @@ function playerChoice(chosenColor) {
     }
     else {
     //console.log('game over')
-   
+    colors.forEach(function(currentColor){
+        lightsOnly(currentColor);
+    });
     gameMessage.textContent = 'Game Over';
     }
 }
