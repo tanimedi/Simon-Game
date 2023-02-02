@@ -49,6 +49,18 @@ function lightUpGame(gameColors) {
     
 }
 
+function endGameLights(lightsOnly, delay, repeat) {
+    var n = 0;
+    var nIntervId  = window.setInterval(function () {
+
+        lightsOnly();
+
+       if (++n === repeat) {
+           window.clearInterval(nIntervId );
+       }
+    }, delay);
+}
+
 function randomColor(){
     
     nextColorNumber = Math.floor(Math.random()*4);
