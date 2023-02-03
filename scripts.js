@@ -49,11 +49,11 @@ function lightUpGame(gameColors) {
     
 }
 
-function endGameLights(lightsOnly, delay, repeat) {
+function endGameLights(myCallback, delay, repeat) {
     var n = 0;
     var nIntervId  = window.setInterval(function () {
 
-        lightsOnly();
+        myCallback;
 
        if (++n === repeat) {
            window.clearInterval(nIntervId );
@@ -118,10 +118,11 @@ function playerChoice(chosenColor) {
     }
     else {
     //console.log('game over')
-    colors.forEach(function(currentColor){
-        lightsOnly(currentColor);
-    });
+    
     gameMessage.textContent = 'Game Over';
+    endGameLights(function () {
+        
+    }, 1000, 5);
     }
 }
 
