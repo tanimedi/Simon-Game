@@ -17,6 +17,7 @@ var highestScore =0;
 
 
 
+
 function lightUp(color) {
     const colorChoice = document.getElementById(color);
     const beep = document.getElementById(color+'Beep')
@@ -28,15 +29,6 @@ function lightUp(color) {
     beep.play();
 }
 
-function lightsOnly(color){
-    const colorChoice = document.getElementById(color);
-   
-
-    colorChoice.classList.add('glow');
-    setTimeout(function(){
-        colorChoice.classList.remove('glow');
-    }, 500);
-}
 
 function lightUpGame(gameColors) {
     gameOrder.forEach(function(currentColor, i){
@@ -47,18 +39,6 @@ function lightUpGame(gameColors) {
        }, i * 1500);
     });
     
-}
-
-function endGameLights(myCallback, delay, repeat) {
-    var n = 0;
-    var nIntervId  = window.setInterval(function () {
-
-        myCallback;
-
-       if (++n === repeat) {
-           window.clearInterval(nIntervId );
-       }
-    }, delay);
 }
 
 function randomColor(){
@@ -120,9 +100,18 @@ function playerChoice(chosenColor) {
     //console.log('game over')
     
     gameMessage.textContent = 'Game Over';
-    endGameLights(function () {
-        
-    }, 1000, 5);
+
+    var coloredButton = document.getElementsByClassName('button');
+    for(var i = 0; i < coloredButton.length; i++)
+    {
+        coloredButton[i].classList.add('glow');
+        console.log(coloredButton[i].className);
+    }
+
+    
+     setTimeout(function(){
+        coloredButton.classList.remove('glow');
+    }, 1500);
     }
 }
 
