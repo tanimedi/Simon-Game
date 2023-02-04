@@ -108,10 +108,12 @@ function playerChoice(chosenColor) {
         console.log(coloredButton[i].className);
     }
 
-    
-     setTimeout(function(){
+    for(var i = 0; i < coloredButton.length; i++)
+        {
+        setTimeout(function(){
         coloredButton.classList.remove('glow');
-    }, 1500);
+        }, 1500);
+        }
     }
 }
 
