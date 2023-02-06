@@ -101,23 +101,28 @@ function playerChoice(chosenColor) {
     
     gameMessage.textContent = 'Game Over';
 
-    var coloredButton = document.getElementsByClassName('button');
+   
     // var coloredButton = document.querySelector('button');
-    console.log("before loop"+ coloredButton)
-    for(let i = 0; i < coloredButton.length; i++) {
-        console.log("add"+ coloredButton)
-        coloredButton[i].classList.add('glow');
-        console.log(coloredButton[i].className);
+    
+    var buttonList= document.querySelectorAll('.button');
+    buttonList.forEach(function(el){
+      el.classList.add('glow');
+    })
 
-        setTimeout(function(){
-            var elements= document.querySelectorAll('.glow');
-            elements.forEach(function(el){
-              el.classList.remove('glow');
-            }
-          )}, 500);
+    function repeatFunction(callback, interval, x) {
+    for(let i = 0; i < x; i++) {
+        setTimeout(callback, i * interval);
         }
     }
-    
+
+
+    repeatFunction(function() {
+        
+        var elements= document.querySelectorAll('.glow');
+        elements.forEach(function(el){
+          el.classList.remove('glow');
+        })
+    }, 3000, 3)
+        
 }
-
-
+}
