@@ -104,25 +104,37 @@ function playerChoice(chosenColor) {
    
     // var coloredButton = document.querySelector('button');
     
-    var buttonList= document.querySelectorAll('.button');
-    buttonList.forEach(function(el){
-      el.classList.add('glow');
-    })
+   
 
-    function repeatFunction(callback, interval, x) {
-    for(let i = 0; i < x; i++) {
-        setTimeout(callback, i * interval);
-        }
-    }
+    setInterval(function() {
+        var buttonList= document.querySelectorAll('.button');
+        buttonList.forEach(function(el){
+          el.classList.add('glow');
 
-
-    repeatFunction(function() {
-        
-        var elements= document.querySelectorAll('.glow');
-        elements.forEach(function(el){
-          el.classList.remove('glow');
+          setTimeout(function(){
+            var elements= document.querySelectorAll('.glow');
+            elements.forEach(function(el){
+              el.classList.remove('glow');
+            })
+          }, 500)
+          
         })
-    }, 3000, 3)
+    }, 1000);
+
+    // function repeatFunction(callback, interval, x) {
+    // for(let i = 0; i < x; i++) {
+    //     setTimeout(callback, i * interval);
+    //     }
+    // }
+
+
+    // repeatFunction(function() {
+        
+    //     var elements= document.querySelectorAll('.glow');
+    //     elements.forEach(function(el){
+    //       el.classList.remove('glow');
+    //     })
+    // }, 3000, 3)
         
 }
 }
