@@ -14,6 +14,7 @@ const gameMessage = document.getElementById('game-message');
 const scoreDisplay = document.getElementById('high-score');
 var score = 0;
 var highestScore =0;
+let nIntervId;
 
 
 
@@ -54,12 +55,28 @@ function randomColor(){
     
     // }
 }
-
 function playButton() {
+    clearInterval(nIntervId);
     gameOrder = [];
     randomColor();
 }
 
+function repeatLights() {
+ nIntervId = setInterval(function() {
+    var buttonList= document.querySelectorAll('.button');
+    buttonList.forEach(function(el){
+      el.classList.add('glow');
+
+      setTimeout(function(){
+        var elements= document.querySelectorAll('.glow');
+        elements.forEach(function(el){
+          el.classList.remove('glow');
+        })
+      }, 500)
+      
+    })
+}, 1000);
+}
 
 
 
@@ -97,44 +114,7 @@ function playerChoice(chosenColor) {
 
     }
     else {
-    //console.log('game over')
-    
     gameMessage.textContent = 'Game Over';
-
-   
-    // var coloredButton = document.querySelector('button');
-    
-   
-
-    setInterval(function() {
-        var buttonList= document.querySelectorAll('.button');
-        buttonList.forEach(function(el){
-          el.classList.add('glow');
-
-          setTimeout(function(){
-            var elements= document.querySelectorAll('.glow');
-            elements.forEach(function(el){
-              el.classList.remove('glow');
-            })
-          }, 500)
-          
-        })
-    }, 1000);
-
-    // function repeatFunction(callback, interval, x) {
-    // for(let i = 0; i < x; i++) {
-    //     setTimeout(callback, i * interval);
-    //     }
-    // }
-
-
-    // repeatFunction(function() {
-        
-    //     var elements= document.querySelectorAll('.glow');
-    //     elements.forEach(function(el){
-    //       el.classList.remove('glow');
-    //     })
-    // }, 3000, 3)
-        
+    repeatLights();
 }
 }
