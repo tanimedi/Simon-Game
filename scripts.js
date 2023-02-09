@@ -56,13 +56,18 @@ function randomColor(){
     // }
 }
 function playButton() {
-    clearInterval(nIntervId);
+    // clearInterval(nIntervId);
     gameOrder = [];
     randomColor();
 }
 
 function repeatLights() {
+    var timesRun = 0;
  nIntervId = setInterval(function() {
+    timesRun++;
+    if(timesRun === 3) {
+        clearInterval(nIntervId);
+    }
     var buttonList= document.querySelectorAll('.button');
     buttonList.forEach(function(el){
       el.classList.add('glow');
