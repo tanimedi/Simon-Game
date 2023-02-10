@@ -77,10 +77,10 @@ function repeatLights() {
         elements.forEach(function(el){
           el.classList.remove('glow');
         })
-      }, 500)
+      }, 400)
       
     })
-}, 1000);
+}, 800);
 }
 
 
