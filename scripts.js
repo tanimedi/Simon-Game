@@ -120,6 +120,7 @@ function playerChoice(chosenColor) {
     }
     else {
     gameMessage.textContent = 'Game Over';
+    gameOrder = [];
     repeatLights();
 }
 }
