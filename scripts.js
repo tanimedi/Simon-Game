@@ -58,6 +58,7 @@ function randomColor(){
 function playButton() {
     // clearInterval(nIntervId);
     gameOrder = [];
+    score = 0;
     randomColor();
 }
 
