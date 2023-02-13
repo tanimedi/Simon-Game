@@ -10,6 +10,7 @@ var yellowBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp
 var blueBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
 var greenBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
 var redBeep = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+var gameOverBeep = new Audio('');
 const gameMessage = document.getElementById('game-message');
 const scoreDisplay = document.getElementById('high-score');
 var score = 0;
